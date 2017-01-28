@@ -1,22 +1,17 @@
 
 <?php
-/*
-Project: Job Site
-Author: Victor Alagwu(victoralagwu@gmail.com)
-Date:
-
- */
 session_start();
-require_once 'include/dbconnect.php';
+require_once 'dbconnect.php';
 
-if (!isset($_SESSION['userSession'])) {
+if(!isset($_SESSION['userSession']))
+{
 
-	header("Location: index.php");
-	exit;
+  header("Location: index.php");
+  exit;
 }
 
-$query = $MySQLi_CON->query("SELECT * FROM users WHERE user_id=" . $_SESSION['userSession']);
-$userRow = $query->fetch_array();
+$query = $MySQLi_CON->query("SELECT * FROM users WHERE user_id=".$_SESSION['userSession']);
+$userRow=$query->fetch_array();
 $MySQLi_CON->close();
 ?>
 <!DOCTYPE html>
@@ -33,28 +28,31 @@ $MySQLi_CON->close();
 <link rel="stylesheet" href="style.css" type="text/css"  />
 <title> Contact Page </title>
 <?php
+	
 
-if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["comment"])) {
-	$name = $_POST["name"];
-	$email = $_POST["email"];
-	$comment = $_POST["comment"];
-	if (!empty($name) && !empty($email) && !empty($comment)) {
-		# code...
-
-		$to = "victoralagwu@gmail.com";
-		$subject = "Contact Form Submitted";
-		$body = $comment;
-		$headers = "From: " . $email;
-		if (@mail($to, $subject, $body, $headers)) {
-			echo "Thanks for contacting us. We will be in touch soon.";
-		} else {
-			echo "Ohh,Sorry,an error occured with the network.Please try again later.";
-		}
-	} else {
-		echo "Please enter all the requested input";
+	if(isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["comment"]))
+	{
+		 $name=$_POST["name"];
+		 $email=$_POST["email"];
+		 $comment=$_POST["comment"];
+		 		if (!empty($name) && !empty($email) && !empty($comment)) {
+		 				# code...
+		 	
+		 	$to ="victoralagwu@gmail.com";
+		 	$subject="Contact Form Submitted";
+		 	$body =$comment;
+		 	$headers="From: ".$email;
+		 	if (@mail($to,$subject, $body,$headers)){
+		 		echo "Thanks for contacting us. We will be in touch soon.";
+		 	}
+		 	else{
+		 		echo "Ohh,Sorry,an error occured with the network.Please try again later.";
+		 	}
+		 }else{
+		 	echo "Please enter all the requested input";
+		 }
 	}
-}
-
+	
 ?>
 </head>
 <title> Contact Page </title>
@@ -91,7 +89,7 @@ if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["comment"]))
             <li><a href="contact.php">CONTACT US</a></li>
               <li><a href="about.php">ABOUT US</a></li>
           </ul>
-
+         
           <form role="search" class="navbar-form navbar-left">
               <div class="form-group">
                   <input type="text" placeholder="Search" class="form-control">
@@ -128,7 +126,7 @@ if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["comment"]))
 
 <?php
 
-include "include/footer.php"
+include "footer.php"
 ?>
 
 </body>

@@ -1,22 +1,18 @@
-<?php
-/*
-Project: Job Site
-Author: Victor Alagwu(victoralagwu@gmail.com)
-Date:
 
- */
-?>
 
  <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/overwrite.css" type="text/css" />
  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+<link rel="stylesheet" href="css/overwrite.css" type="text/css" />
   <script type="text/javascript" src="engine1/jquery.js"></script>
   <script src="js/jquery-1.9.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>

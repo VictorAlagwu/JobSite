@@ -1,13 +1,7 @@
 
 <?php
-/*
-Project: Job Site
-Author: Victor Alagwu(victoralagwu@gmail.com)
-Date:
-
- */
 session_start();
-require_once 'include/dbconnect.php';
+require_once 'dbconnect.php';
 
 if (!isset($_SESSION['userSession'])) {
 
@@ -24,11 +18,11 @@ $MySQLi_CON->close();
 <head>
 <?php
 
-include "include/navbar.php";
+include "navbar.php";
 ?>
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
-
+<link href="css/font-awesome.min.css" rel="stylesheet" >
 <link rel="stylesheet" href="style.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="engine1/style.css" />
   <script type="text/javascript" src="engine1/jquery.js"></script>
@@ -143,10 +137,11 @@ include "include/navbar.php";
 		<i>
 Do you need our services
 contact us via the following platforms<br>
--Twitter www.twitter.com/alancer<br>
--Facebook www.facebook.com/alancer<br>
--linkedIn www.linkedIn.com/alancer<br>
- Contact Numbers:- 08170449567
+<a href="https://twitter.com/i_jv_learner"><i class="fa fa-twitter"></i></a> <br>
+<a href="https://facebook.com/victor.alagwu"><i class="fa fa-facebook"></i></a> <br>
+<a href="https://github.com/victoralagwu"><i class="fa fa-github"></i> </a><br>
+<a href="https://linkedIn.com/victoralagwu"><i class="fa fa-linkedin" ></i> </a><br>
+<i class="fa fa-mobile"></i> Contact Numbers:- 08170449567
 </i>
 
 
@@ -157,7 +152,7 @@ contact us via the following platforms<br>
 				</div>
 
 				<?php
-include "include/footer.php";
+include "footer.php";
 ?>
 </body>
 </html>

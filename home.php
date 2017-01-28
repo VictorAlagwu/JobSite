@@ -1,14 +1,13 @@
+<!--
+Name of Coder: Alagwu Victor
 
+
+Online Job Site
+-->
 
 <?php
-/*
-Project: Job Site
-Author: Victor Alagwu(victoralagwu@gmail.com)
-Date:
-
- */
 session_start();
-require_once 'include/dbconnect.php';
+require_once 'dbconnect.php';
 
 if (!isset($_SESSION['userSession'])) {
 
@@ -126,18 +125,22 @@ foreach ($db as $key => $value) {
 }
 $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-$query = "SELECT * FROM users";
+$query = "SELECT * FROM users WHERE user_skill LIKE 'Web Development' ";
 $run_query = mysqli_query($con, $query);
 $num_query = mysqli_num_rows($run_query);
-while ($row = mysqli_fetch_array($run_query)) {
-	$user_name = $row['user_name'];
-	$user_skill = $row['user_skill'];
-	$user_email = $row['user_email'];
+if ($run_query) {
+	while ($row = mysqli_fetch_array($run_query)) {
+		$user_name = $row['user_name'];
+		$user_skill = $row['user_skill'];
+		$user_email = $row['user_email'];
 
-	echo '<li class="list-group-item list-group-item">' . $user_name . '</li>';
-	echo '<li class="list-group-item list-group-item">' . $user_email . '</li>';
-	echo '<li class="list-group-item list-group-item">' . $user_skill . '</li>';
-	echo '<hr>';
+		echo '<li class="list-group-item list-group-item">' . $user_name . '</li>';
+		echo '<li class="list-group-item list-group-item">' . $user_email . '</li>';
+		echo '<li class="list-group-item list-group-item">' . $user_skill . '</li>';
+		echo '<hr>';
+	}
+} else {
+	echo "NO WEB DEVELOPERS";
 }
 ?>
 
@@ -150,18 +153,22 @@ while ($row = mysqli_fetch_array($run_query)) {
               <ul class="list-group-item-heading" style="font-family: Bernard MT Condensed;">
               <?php
 
-$query = "SELECT * FROM users";
+$query = "SELECT * FROM users WHERE user_skill = 'Design & Creative'";
 $run_query = mysqli_query($con, $query);
 $num_query = mysqli_num_rows($run_query);
 while ($row = mysqli_fetch_array($run_query)) {
 	$user_name = $row['user_name'];
 	$user_skill = $row['user_skill'];
 	$user_email = $row['user_email'];
+	if ($user_skill == 'Design & Creative') {
 
-	echo '<li class="list-group-item list-group-item">' . $user_name . '</li>';
-	echo '<li class="list-group-item list-group-item">' . $user_email . '</li>';
-	echo '<li class="list-group-item list-group-item">' . $user_skill . '</li>';
-	echo '<hr>';
+		echo '<li class="list-group-item list-group-item">' . $user_name . '</li>';
+		echo '<li class="list-group-item list-group-item">' . $user_email . '</li>';
+		echo '<li class="list-group-item list-group-item">' . $user_skill . '</li>';
+		echo '<hr>';
+	} else {
+		echo "NO GRAPHIC DESIGNERS";
+	}
 }
 
 ?>
@@ -173,24 +180,24 @@ while ($row = mysqli_fetch_array($run_query)) {
              <ul  class="list-group-item-heading" style="font-family: Bernard MT Condensed;">
                <?php
 
-$query = "SELECT * FROM users";
+$query = "SELECT * FROM users WHERE user_skill = 'IT & Newtworking'";
 $run_query = mysqli_query($con, $query);
 $num_query = mysqli_num_rows($run_query);
-if ($userRow['user_name'] == "vICTORaLagwu") {
-	while ($row = mysqli_fetch_array($run_query)) {
-		$user_name = $row['user_name'];
-		$user_skill = $row['user_skill'];
-		$user_email = $row['user_email'];
+while ($row = mysqli_fetch_array($run_query)) {
+	$user_name = $row['user_name'];
+	$user_skill = $row['user_skill'];
+	$user_email = $row['user_email'];
+	if ($user_skill == 'IT & Newtworking') {
 
 		echo '<li class="list-group-item list-group-item">' . $user_name . '</li>';
 		echo '<li class="list-group-item list-group-item">' . $user_email . '</li>';
 		echo '<li class="list-group-item list-group-item">' . $user_skill . '</li>';
 		echo '<hr>';
-
+	} else {
+		echo "No IT & NETWORKING Workers";
 	}
-} else {
-	echo "No IT Workers";
 }
+
 ?>
               </ul>
           </div>
@@ -207,18 +214,22 @@ if ($userRow['user_name'] == "vICTORaLagwu") {
                   <ul  class="list-group-item-heading" style="font-family: Bernard MT Condensed;">
                     <?php
 
-$query = "SELECT * FROM users";
+$query = "SELECT * FROM users WHERE user_skill = 'Writing'";
 $run_query = mysqli_query($con, $query);
 $num_query = mysqli_num_rows($run_query);
 while ($row = mysqli_fetch_array($run_query)) {
 	$user_name = $row['user_name'];
 	$user_skill = $row['user_skill'];
 	$user_email = $row['user_email'];
+	if ($user_skill == 'Writing') {
 
-	echo '<li class="list-group-item list-group-item">' . $user_name . '</li>';
-	echo '<li class="list-group-item list-group-item">' . $user_email . '</li>';
-	echo '<li class="list-group-item list-group-item">' . $user_skill . '</li>';
-	echo '<hr>';
+		echo '<li class="list-group-item list-group-item">' . $user_name . '</li>';
+		echo '<li class="list-group-item list-group-item">' . $user_email . '</li>';
+		echo '<li class="list-group-item list-group-item">' . $user_skill . '</li>';
+		echo '<hr>';
+	} else {
+		echo "NO  WRITERS";
+	}
 }
 
 ?>
@@ -231,18 +242,22 @@ while ($row = mysqli_fetch_array($run_query)) {
              <ul  class="list-group" style="font-family: Bernard MT Condensed;">
                <?php
 
-$query = "SELECT * FROM users";
+$query = "SELECT * FROM users WHERE user_skill = 'Virtual Assistant'";
 $run_query = mysqli_query($con, $query);
 $num_query = mysqli_num_rows($run_query);
+
 while ($row = mysqli_fetch_array($run_query)) {
 	$user_name = $row['user_name'];
 	$user_skill = $row['user_skill'];
 	$user_email = $row['user_email'];
-
-	echo '<li class="list-group-item list-group-item">' . $user_name . '</li>';
-	echo '<li class="list-group-item list-group-item">' . $user_email . '</li>';
-	echo '<li class="list-group-item list-group-item">' . $user_skill . '</li>';
-	echo '<hr>';
+	if ($user_skill == 'Virtual Assistant') {
+		echo '<li class="list-group-item list-group-item">' . $user_name . '</li>';
+		echo '<li class="list-group-item list-group-item">' . $user_email . '</li>';
+		echo '<li class="list-group-item list-group-item">' . $user_skill . '</li>';
+		echo '<hr>';
+	} else {
+		echo "No VirtuaL Assistant";
+	}
 }
 
 ?>
@@ -255,18 +270,22 @@ while ($row = mysqli_fetch_array($run_query)) {
              <ul  class="list-group-item-heading" style="font-family: Bernard MT Condensed;">
                <?php
 
-$query = "SELECT * FROM users";
+$query = "SELECT * FROM users WHERE user_skill = 'Engineering & Architecture'";
 $run_query = mysqli_query($con, $query);
 $num_query = mysqli_num_rows($run_query);
+
 while ($row = mysqli_fetch_array($run_query)) {
 	$user_name = $row['user_name'];
 	$user_skill = $row['user_skill'];
 	$user_email = $row['user_email'];
-
-	echo '<li class="list-group-item list-group-item">' . $user_name . '</li>';
-	echo '<li class="list-group-item list-group-item">' . $user_email . '</li>';
-	echo '<li class="list-group-item list-group-item">' . $user_skill . '</li>';
-	echo '<hr>';
+	if ($user_skill == 'Engineering & Architecture') {
+		echo '<li class="list-group-item list-group-item">' . $user_name . '</li>';
+		echo '<li class="list-group-item list-group-item">' . $user_email . '</li>';
+		echo '<li class="list-group-item list-group-item">' . $user_skill . '</li>';
+		echo '<hr>';
+	} else {
+		echo "NO ENGINEERS";
+	}
 }
 
 ?>

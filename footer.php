@@ -1,12 +1,3 @@
-<?php
-/*
-Project: Job Site
-Author: Victor Alagwu(victoralagwu@gmail.com)
-Date:
-
- */
-
-?>
 <!DOCTYPE html>
 <html>
 <head>

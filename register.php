@@ -1,10 +1,4 @@
 <?php
-/*
-Project: Job Site
-Author: Victor Alagwu(victoralagwu@gmail.com)
-Date:
-
- */
 session_start();
 if (isset($_SESSION['userSession']) != "") {
 	header("Location: home.php");
@@ -84,11 +78,21 @@ if (isset($msg)) {
         <input type="text" class="form-control" placeholder="Username" name="user_name" required  />
         </div>
 
-        <div class="form-group">
+     <!--    <div class="form-group">
         <input type="text" class="form-control" placeholder="Enter your Skill" name="user_skill" required  />
+        </div> -->
+         <div class="form-group">
+        	<select class="form-control" name="user_skill" id="">
+        	<?php
+echo "<option value='Web Development'>Web Development</option>";
+echo "<option value='Design & Creative'>Design & Creative</option>";
+echo "<option value='IT & Newtworking'>IT & Networking</option>";
+echo "<option value='Writing'>Writing</option>";
+echo "<option value='Virtual Assistant'>Virtual Assistants</option>";
+echo "<option value='Engineering & Architecture'>Engineering & Architecture</option>";
+?>
+        	</select>
         </div>
-
-
         <div class="form-group">
         <input type="email" class="form-control" placeholder="Email address" name="user_email" required  />
         <span id="check-e"></span>

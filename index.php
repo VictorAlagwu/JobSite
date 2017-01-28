@@ -1,16 +1,19 @@
 
 
+<!--
+Name of Coder: Alagwu Victor
+
+
+Online Job Site
+-->
+
+
+
 
 <?php
-/*
-Project: Job Site
-Author: Victor Alagwu(victoralagwu@gmail.com)
-Date:
-
- */
 session_start();
-require_once 'include/dbconnect.php';
-include "include/navbar.php";
+require_once 'dbconnect.php';
+include "navbar.php";
 
 if (isset($_SESSION['userSession']) && !strstr($_SESSION['PHP_SELF'], "home.php")) {
 	header("Location: home.php");
@@ -21,7 +24,7 @@ if (isset($_POST['btn-login'])) {
 	$email = $MySQLi_CON->real_escape_string(trim($_POST['user_email']));
 	$upass = $MySQLi_CON->real_escape_string(trim($_POST['password']));
 
-	$query = $MySQLi_CON->query("SELECT user_id, user_email, user_pass FROM users WHERE user_email='$email'");
+	$query = $MySQLi_CON->query("SELECT user_id, user_email, user_pass FROM users WHERE user_email='$email' OR user_name ='$email' ");
 	$row = $query->fetch_array();
 
 	if (password_verify($upass, $row['user_pass'])) {
@@ -70,7 +73,7 @@ if (isset($msg)) {
 ?>
 
         <div class="form-group">
-        <input type="email" class="form-control" placeholder="Email address" name="user_email" required />
+        <input type="text" class="form-control" placeholder="Email address" name="user_email" required />
         <span id="check-e"></span>
         </div>
 
@@ -97,7 +100,7 @@ if (isset($msg)) {
 
 </div>
 <?php
-include "include/footer.php";
+include "footer.php";
 ?>
 </body>
 </html>
