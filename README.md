@@ -4,10 +4,11 @@ During my time working on this project, i have to learn some new stuffs,hence th
 
 # About Project -
 AchieversLancer, is a simple job site that allows users(Freelancer) to register, and create an account with their different areas of specialization. It then list or group the users according to the different things they can do and help employers find those who are suitable for the job.
+
 Features of the Site
 --------
 - **Registration Page:** Allows Users to register
- )![Registration Screenshot](/img/register.jpg?raw=true "Registration Images")
+ ![Registration Screenshot](/img/register.jpg "Registration Images")
 - **Local Authentication** using either Username or Email, and Password
 - **OAuth 2.0 Authentication** via Facebook, Google, GitHub, LinkedIn, Instagram(Not Yet Implemented..since it was supposed to be a simple project)
 - **The Use of Password Hashing**
