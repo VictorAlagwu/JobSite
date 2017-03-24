@@ -1,15 +1,12 @@
 # AchieversLancer -A Simple Job Site - 
-<b>Author: </b>Victor Alagwu<hr>
-<b>Email: </b>victoralagwu@gmail.com<hr>
-<b>Contact: </b>(+234)8170449567<hr>
 Actually, this was not meant to be a big project, it was a project or should assignment given to me by the Software Developers Group, University of Nigeria, Nsukka.
 During my time working on this project, i have to learn some new stuffs,hence the reason it is not advance as it was suppose to,i would have implemented some ideas, but at that time i was just getting to know about some of the technologies to be implemented, nevertheless, This project helped me to learn some new things.
-#About Project
+
+#About Project-
 AchieversLancer is a simple job site that allows users(Freelancer) to register, and create an account with their different areas of specialization. It then list or group the users according to the different things they can do and help employers find those who are suitable for the job.
 Features of the Site
 --------
 - **Registration Page:** Allows Users to register
- 
 - **Local Authentication** using either Username or Email, and Password
 - **OAuth 2.0 Authentication** via Facebook, Google, GitHub, LinkedIn, Instagram(Not Yet Implemented..since it was supposed to be a simple project)
 - **The Use of Password Hashing**
