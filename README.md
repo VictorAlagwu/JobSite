@@ -35,10 +35,10 @@ Ok, you feel like this project is something that meant make a little sense and y
 
 
 - Do the following change the code in the **dbconnect.php**
-	`$DB_host = "localhost";` \\\ Use your database host
-`$DB_user = "root";` \\\ Use your database username
-`$DB_pass = "";` \\\ Use your database password
-`$DB_name = "users_details";` \\\ Use your database name
+	`$DB_host = "localhost";`
+`$DB_user = "root";`
+`$DB_pass = "";`
+`$DB_name = "users_details";`
 - Import the database file named "alancer_db.sql"
 - After that you are done,register and login
 - "Just view the project"
